@@ -97,8 +97,10 @@ function trackClicked()
     xhr.onreadystatechange = function () {
 		debugger;
         if (this.readyState == 4 && this.status == 200) {
-			trackTextArea.value = this.response;
-        }
+		trackTextArea.value = this.response;
+        } else {
+		trackTextArea.value = "Unable to connect to tracking services. Please call our helpline.";
+	}
     }
     // Sending our request 
     xhr.send();
